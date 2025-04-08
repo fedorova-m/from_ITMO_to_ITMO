@@ -1,0 +1,115 @@
+.titleRoutesPage {
+  font-family: "SF Pro Display";
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #333;
+  margin-top: 62px;
+}
+.text1RoutesPage {
+  font-family: "SF Pro Display";
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #000;
+  margin-top: 43px;
+}
+.mapPngRoutesPage {
+  width: 40vw;
+  margin-top: 65px;
+}
+.routesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textLineRoutesPage {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 5px;
+}
+.labelCaseSelectionRoutesPage {
+  font-family: "SF Pro Display";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #fff;
+  padding: 9px 15px;
+  width: fit-content;
+  border: 1px solid #929292;
+  border-radius: 20px;
+  background: #696969;
+}
+.textContainerCaseSelectionRoutesPage {
+  font-family: "SF Pro Display";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: #000;
+  cursor: pointer;
+}
+.textContainerCaseSelectionRoutesPageActive {
+  font-family: "SF Pro Display";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: #271dff;
+  cursor: pointer;
+}
+.containerCaseSelectionRoutesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: start;
+  justify-content: center;
+  padding: 34px 60px 34px 20px;
+  width: fit-content;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #f8f8f8;
+  border: 1px solid #6a6a6a;
+  border-radius: 0 30px 30px 30px;
+  margin-left: 10px;
+}
+.blockCaseSelectionRoutesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 312px;
+}
+.caseSelectionRoutesPage {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 75px;
+}
+.housingSelectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomBtnRoutersPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "SF Pro Display";
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #000;
+  margin-bottom: 140px;
+  cursor: pointer;
+}
+.profileModalRoutesPage {
+  position: absolute;
+  top: 93px;
+  right: 64px;
+}

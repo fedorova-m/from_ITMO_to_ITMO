@@ -1,50 +1,73 @@
 import { useState } from "react"
 import "./profileModal.scss"
+import { Link } from "react-router-dom"
 export const ProfileModal = () => {
   const [textProfileModalActive, setTextProfileModalActive] = useState(1)
   return (
     <div className="profileModal">
-      <div
-        className={
-          textProfileModalActive === 1
-            ? "textProfileModalActive"
-            : "textProfileModal"
-        }
-        onClick={() => setTextProfileModalActive(1)}
+      <Link
+        to="/"
+        style={{ textDecoration: "none", width: "calc(100% - 41px" }}
       >
-        Главная
-      </div>
-      <div
-        className={
-          textProfileModalActive === 2
-            ? "textProfileModalActive"
-            : "textProfileModal"
-        }
-        onClick={() => setTextProfileModalActive(2)}
+        <div
+          className={
+            textProfileModalActive === 1
+              ? "textProfileModalActive"
+              : "textProfileModal"
+          }
+          onClick={() => setTextProfileModalActive(1)}
+        >
+          Главная
+        </div>
+      </Link>
+      <Link
+        to="/routes"
+        style={{ textDecoration: "none", width: "calc(100% - 41px)" }}
       >
-        Маршруты
-      </div>
-      <div
-        className={
-          textProfileModalActive === 3
-            ? "textProfileModalActive"
-            : "textProfileModal"
-        }
-        onClick={() => setTextProfileModalActive(3)}
+        {" "}
+        <div
+          className={
+            textProfileModalActive === 2
+              ? "textProfileModalActive"
+              : "textProfileModal"
+          }
+          onClick={() => setTextProfileModalActive(2)}
+        >
+          Маршруты
+        </div>
+      </Link>
+      <Link
+        to="/routes"
+        style={{ textDecoration: "none", width: "calc(100% - 41px)" }}
       >
-        О нас
-      </div>
-      <div
-        className={
-          textProfileModalActive === 4
-            ? "textProfileModalActive"
-            : "textProfileModal"
-        }
-        style={{ borderBottom: "none" }}
-        onClick={() => setTextProfileModalActive(4)}
+        {" "}
+        <div
+          className={
+            textProfileModalActive === 3
+              ? "textProfileModalActive"
+              : "textProfileModal"
+          }
+          onClick={() => setTextProfileModalActive(3)}
+        >
+          О нас
+        </div>
+      </Link>
+      <Link
+        to="/routes"
+        style={{ textDecoration: "none", width: "calc(100% - 41px)" }}
       >
-        Отзывы
-      </div>
+        <div
+          className={
+            textProfileModalActive === 4
+              ? "textProfileModalActive"
+              : "textProfileModal"
+          }
+          style={{ borderBottom: "none" }}
+          onClick={() => setTextProfileModalActive(4)}
+        >
+          Отзывы
+        </div>
+      </Link>
     </div>
   )
 }

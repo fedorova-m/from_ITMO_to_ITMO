@@ -1,7 +1,9 @@
 import "./home.scss"
 import { Header } from "../../components/header/header"
 import { ProfileModal } from "../../components/profileModal/profileModal"
-export const Home = ({ profileModal, setProfileModal }) => {
+import { Link } from "react-router-dom"
+
+const Home = ({ profileModal, setProfileModal }) => {
   return (
     <div className="homePage">
       <Header setProfileModal={setProfileModal} />
@@ -91,26 +93,28 @@ export const Home = ({ profileModal, setProfileModal }) => {
         <div className="title2HomePage" style={{ marginTop: "150px" }}>
           Начните свое путешествие прямо сейчас!
         </div>
-        <div className="btnStartRoutesHomePage">
-          Go
-          <svg
-            style={{ marginTop: "-2px" }}
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6 9.33004C6 6.02005 8.35 4.66005 11.22 6.32005L15.84 9.00005C18.71 10.66 18.71 13.37 15.84 15.03L11.22 17.71C8.35 19.34 6 17.99 6 14.67V9.33004Z"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+        <Link to="/routes" style={{ textDecoration: "none" }}>
+          <div className="btnStartRoutesHomePage">
+            Go
+            <svg
+              style={{ marginTop: "-2px" }}
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 9.33004C6 6.02005 8.35 4.66005 11.22 6.32005L15.84 9.00005C18.71 10.66 18.71 13.37 15.84 15.03L11.22 17.71C8.35 19.34 6 17.99 6 14.67V9.33004Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>{" "}
+        </Link>
       </div>
       {profileModal && (
         <div className="profileModalHomePage">
@@ -120,3 +124,4 @@ export const Home = ({ profileModal, setProfileModal }) => {
     </div>
   )
 }
+export default Home
