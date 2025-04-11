@@ -3,7 +3,12 @@ import { Header } from "../../components/header/header"
 import { ProfileModal } from "../../components/profileModal/profileModal"
 import { Link } from "react-router-dom"
 
-const Home = ({ profileModal, setProfileModal }) => {
+const Home = ({
+  profileModal,
+  setProfileModal,
+  textProfileModalActive,
+  setTextProfileModalActive,
+}) => {
   return (
     <div className="homePage">
       <Header setProfileModal={setProfileModal} />
@@ -93,7 +98,11 @@ const Home = ({ profileModal, setProfileModal }) => {
         <div className="title2HomePage" style={{ marginTop: "150px" }}>
           Начните свое путешествие прямо сейчас!
         </div>
-        <Link to="/routes" style={{ textDecoration: "none" }}>
+        <Link
+          to="/routes"
+          style={{ textDecoration: "none" }}
+          onClick={() => setTextProfileModalActive(2)}
+        >
           <div className="btnStartRoutesHomePage">
             Go
             <svg
@@ -118,7 +127,10 @@ const Home = ({ profileModal, setProfileModal }) => {
       </div>
       {profileModal && (
         <div className="profileModalHomePage">
-          <ProfileModal />
+          <ProfileModal
+            textProfileModalActive={textProfileModalActive}
+            setTextProfileModalActive={setTextProfileModalActive}
+          />
         </div>
       )}
     </div>

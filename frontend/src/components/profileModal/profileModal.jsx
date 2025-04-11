@@ -1,8 +1,10 @@
 import { useState } from "react"
 import "./profileModal.scss"
 import { Link } from "react-router-dom"
-export const ProfileModal = () => {
-  const [textProfileModalActive, setTextProfileModalActive] = useState(1)
+export const ProfileModal = ({
+  textProfileModalActive,
+  setTextProfileModalActive,
+}) => {
   return (
     <div className="profileModal">
       <Link

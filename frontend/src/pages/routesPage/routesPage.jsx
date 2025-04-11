@@ -3,7 +3,12 @@ import { Header } from "../../components/header/header"
 import map from "../../assets/img/map.png"
 import { useEffect, useState } from "react"
 import { ProfileModal } from "../../components/profileModal/profileModal"
-export const RoutesPage = ({ profileModal, setProfileModal }) => {
+export const RoutesPage = ({
+  profileModal,
+  setProfileModal,
+  textProfileModalActive,
+  setTextProfileModalActive,
+}) => {
   const caseArr1 = [
     "ул. Ломоносова д.9",
     "Кронверский пр. 49",
@@ -114,29 +119,37 @@ export const RoutesPage = ({ profileModal, setProfileModal }) => {
             </div>
           </div>
         </div>
-        <div className="bottomBtnRoutersPage">
-          Начать маршрут{" "}
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link to="/route" style={{ textDecoration: "none" }}>
+          <div
+            className="bottomBtnRoutersPage"
+            onClick={() => setTextProfileModalActive(3)}
           >
-            <path
-              d="M19.2401 7.90662L27.3334 16L19.2401 24.0933M4.66675 16H27.1067"
-              stroke="#292D32"
-              stroke-width="2.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+            Начать маршрут
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.2401 7.90662L27.3334 16L19.2401 24.0933M4.66675 16H27.1067"
+                stroke="#292D32"
+                stroke-width="2.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </Link>
       </div>
       {profileModal && (
         <div className="profileModalRoutesPage">
-          <ProfileModal />
+          <ProfileModal
+            textProfileModalActive={textProfileModalActive}
+            setTextProfileModalActive={setTextProfileModalActive}
+          />
         </div>
       )}
     </div>
