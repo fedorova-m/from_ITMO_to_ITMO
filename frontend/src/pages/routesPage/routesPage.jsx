@@ -3,29 +3,31 @@ import { Header } from "../../components/header/header"
 import map from "../../assets/img/map.png"
 import { useEffect, useState } from "react"
 import { ProfileModal } from "../../components/profileModal/profileModal"
+import { Link } from "react-router-dom"
 export const RoutesPage = ({
   profileModal,
   setProfileModal,
   textProfileModalActive,
   setTextProfileModalActive,
+  setRouteUser,
 }) => {
   const caseArr1 = [
-    "ул. Ломоносова д.9",
     "Кронверский пр. 49",
-    "Биржевая линия, 14",
-    "пер. Гривцова, 14-16",
     "ул. Чайковского, 11/2",
+    "ул. Ломоносова д.9",
+    "пер. Гривцова, 14-16",
+    "Биржевая линия, 14",
   ]
   const caseArr2 = [
-    "ул. Ломоносова д.9",
     "Кронверский пр. 49",
-    "Биржевая линия, 14",
-    "пер. Гривцова, 14-16",
     "ул. Чайковского, 11/2",
+    "ул. Ломоносова д.9",
+    "пер. Гривцова, 14-16",
+    "Биржевая линия, 14",
   ]
   const [waypoints, setWaypoints] = useState({
-    departure: caseArr1[0],
-    arrival: caseArr2[0],
+    start: caseArr1[0],
+    end: caseArr2[0],
   })
   const [departureBuildingActive, setDepartureBuildingActive] = useState(0)
   const [arrivalBuildingActive, setArrivalBuildingActive] = useState(0)
@@ -33,7 +35,7 @@ export const RoutesPage = ({
     setDepartureBuildingActive(i)
     setWaypoints((prevWaypoints) => ({
       ...prevWaypoints,
-      departure: caseArr1[i],
+      start: caseArr1[i],
     }))
   }
 
@@ -41,12 +43,18 @@ export const RoutesPage = ({
     setArrivalBuildingActive(i)
     setWaypoints((prevWaypoints) => ({
       ...prevWaypoints,
-      arrival: caseArr2[i],
+      end: caseArr2[i],
     }))
   }
   useEffect(() => {
     console.log(waypoints)
   }, [waypoints])
+  useEffect(() => {
+    setRouteUser({
+      start: departureBuildingActive,
+      end: arrivalBuildingActive,
+    })
+  }, [departureBuildingActive, arrivalBuildingActive])
   return (
     <div className="routesPage">
       <Header setProfileModal={setProfileModal} />
