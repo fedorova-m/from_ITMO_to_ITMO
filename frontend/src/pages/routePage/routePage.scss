@@ -101,19 +101,18 @@
   max-height: 184px;
 }
 .imgObjectRouteContainer {
-  width: 20vh;
-  background: #46704d;
-  height: 20vh;
+  height: 25vh;
   margin-bottom: 20px;
 }
 .titleInfoObjectRoutePage {
   font-family: "SF Pro Display";
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: -0.03em;
-  text-align: center;
+  text-align: start;
   color: #000;
   margin-bottom: 15px;
+  width: 100%;
 }
 .infoObjectRoutePage {
   display: flex;

@@ -128,10 +128,7 @@ export const RoutesPage = ({
           </div>
         </div>
         <Link to="/route" style={{ textDecoration: "none" }}>
-          <div
-            className="bottomBtnRoutersPage"
-            onClick={() => setTextProfileModalActive(3)}
-          >
+          <div className="bottomBtnRoutersPage">
             Начать маршрут
             <svg
               width="32"

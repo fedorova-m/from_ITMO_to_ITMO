@@ -5,6 +5,7 @@ import { ProfileModal } from "../../components/profileModal/profileModal"
 import array from "../../array.js"
 import logo from "../../assets/img/logo.png"
 import { Link } from "react-router-dom"
+import images from "../../utils/importImage.js"
 export const RoutePage = ({
   profileModal,
   setProfileModal,
@@ -61,6 +62,12 @@ export const RoutePage = ({
           }
 
     return [chosen]
+  }
+  const truncateString = (str, maxLength) => {
+    if (str.length > maxLength) {
+      return str.substring(0, maxLength) + "..."
+    }
+    return str
   }
   useEffect(() => {
     if (routeUser?.start != null && routeUser?.end != null) {
@@ -137,7 +144,7 @@ export const RoutePage = ({
                               : "titlePlaceRoutePage"
                           }
                         >
-                          • {place.address}
+                          • {truncateString(place.name, 28)}
                         </div>
                       </div>
                     ))}
@@ -171,9 +178,15 @@ export const RoutePage = ({
             <div className="infoObjectRoutePage">
               {selectedPlace ? (
                 <>
-                  <div className="imgObjectRouteContainer"></div>
+                  <div className="imgObjectRouteContainer">
+                    <img
+                      className="imgObjectRouteContainer"
+                      src={images[selectedPlace.image]}
+                      alt={selectedPlace.image}
+                    />
+                  </div>
                   <div className="titleInfoObjectRoutePage">
-                    {selectedPlace.address}
+                    {selectedPlace.name}
                   </div>
                   <div className="lineContInfoObjectRoutePage">
                     <div className="lineInfoObjectRoutePage">
