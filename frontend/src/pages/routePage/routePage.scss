@@ -1,7 +1,7 @@
 .titleRoutePage {
   font-family: "SF Pro Display";
   font-weight: 700;
-  font-size: 42px;
+  font-size: 36px;
   letter-spacing: -0.03em;
   text-align: center;
   color: #333;
@@ -15,12 +15,13 @@
 .fromToTextRoutePage {
   font-family: "SF Pro Display";
   font-weight: 600;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: -0.03em;
   text-align: center;
   color: #000;
   display: flex;
   align-items: center;
+  gap: 4px;
 }
 .titlePlaceRoutePage {
   font-family: "SF Pro Display";
@@ -36,16 +37,16 @@
   flex-direction: column;
   gap: 10px;
   align-items: start;
-  padding-block: 40px;
+  padding-block: 20px;
   overflow-y: scroll;
-  padding-right: 40px;
+  padding-right: 60px;
   width: 100%;
 }
 .blockObjectRoutePage {
   display: flex;
-  height: 40vh;
+  height: calc(40vh - 40px);
   overflow: hidden;
-  margin-block: 40px;
+  margin-block: 20px;
   margin-left: 30px;
 }
 .blockRoutePage {
@@ -53,13 +54,15 @@
   flex-direction: column;
   gap: 30px;
   align-items: start;
-  justify-content: center;
+  justify-content: space-around;
   border-right: 4px solid #424242;
-  padding-right: 10vw;
+  width: 40vw;
+  max-width: 480px;
+  height: 55vh;
 }
 .blockInfoRoutePage {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   margin-top: 60px;
 }
@@ -83,7 +86,7 @@
 .addressInfoObjectRoutePage {
   font-family: "SF Pro Display";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: -0.03em;
   text-align: start;
   color: #000;
@@ -98,11 +101,10 @@
   max-height: 184px;
 }
 .imgObjectRouteContainer {
-  width: 100%;
-  max-width: 20vh;
+  width: 20vh;
   background: #46704d;
   height: 20vh;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .titleInfoObjectRoutePage {
   font-family: "SF Pro Display";
@@ -111,33 +113,54 @@
   letter-spacing: -0.03em;
   text-align: center;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .infoObjectRoutePage {
   display: flex;
   flex-direction: column;
-  gap: 58;
   align-items: start;
-  justify-content: center;
+  justify-content: space-around;
   padding-left: 80px;
   width: 70%;
+  height: 55vh;
 }
 .infoObjectContRoutePage {
-  width: 100%;
-  max-width: 50vw;
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 55vh;
 }
 .lineInfoObjectRoutePageScroll {
   height: 100%;
   overflow-y: scroll;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   flex-direction: column;
   align-items: start;
 }
 .lineContInfoObjectRoutePage {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
+}
+.textBottomTitleRoutePage {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-family: "SF Pro Display";
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 92%;
+  color: #0e008f;
+  gap: 6px;
+}
+.containerRoutePage {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-inline: 10vw;
+  cursor: pointer;
+}
+.routePage {
+  overflow: hidden;
 }

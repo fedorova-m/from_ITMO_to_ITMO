@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ProfileModal } from "../../components/profileModal/profileModal"
 import array from "../../array.js"
 import logo from "../../assets/img/logo.png"
+import { Link } from "react-router-dom"
 export const RoutePage = ({
   profileModal,
   setProfileModal,
@@ -73,105 +74,130 @@ export const RoutePage = ({
     <div className="routePage">
       <Header setProfileModal={setProfileModal} />
       <div className="titleRoutePage">Ваш маршрут</div>
-      <div className="blockInfoRoutePage">
-        <div className="blockRoutePage">
-          {routes.map((route, i) => (
-            <div key={i}>
-              <div className="fromToTextRoutePage">
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.5001 19.5854C20.013 19.5854 22.0501 17.5483 22.0501 15.0354C22.0501 12.5225 20.013 10.4854 17.5001 10.4854C14.9872 10.4854 12.9501 12.5225 12.9501 15.0354C12.9501 17.5483 14.9872 19.5854 17.5001 19.5854Z"
-                    stroke="#292D32"
-                    strokeWidth="3"
-                  />
-                  <path
-                    d="M5.27931 12.3812C8.15223 -0.247923 26.8626 -0.23334 29.721 12.3958C31.3981 19.8042 26.7897 26.075 22.7501 29.9542C19.8189 32.7833 15.1814 32.7833 12.2356 29.9542C8.21056 26.075 3.60223 19.7896 5.27931 12.3812Z"
-                    stroke="#292D32"
-                    strokeWidth="3"
-                  />
-                </svg>
-                {route.from}
-              </div>
-              <div className="blockObjectRoutePage">
-                <div className="blockObjectRoutePageScroll">
-                  {route.data.map((place, index) => (
-                    <div
-                      className="objectRoutePage"
-                      key={index}
-                      onClick={() => setSelectedPlace(place)}
-                    >
+      <div className="containerRoutePage">
+        <Link to="/routes" style={{ textDecoration: "none" }}>
+          <div className="textBottomTitleRoutePage">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.9625 7.41251L4.375 15L11.9625 22.5875M25.625 15H4.5875"
+                stroke="#0E008F"
+                stroke-width="2.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Назад
+          </div>
+        </Link>
+        <div className="blockInfoRoutePage">
+          <div className="blockRoutePage">
+            {routes.map((route, i) => (
+              <div key={i} className="blockRoutePage">
+                <div className="fromToTextRoutePage">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.5002 16.2279C16.5823 16.2279 18.2702 14.54 18.2702 12.4579C18.2702 10.3758 16.5823 8.68791 14.5002 8.68791C12.4181 8.68791 10.7302 10.3758 10.7302 12.4579C10.7302 14.54 12.4181 16.2279 14.5002 16.2279Z"
+                      stroke="#292D32"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M4.37438 10.2587C6.7548 -0.205424 22.2577 -0.193341 24.6261 10.2708C26.0156 16.4092 22.1973 21.605 18.8502 24.8192C16.4215 27.1633 12.579 27.1633 10.1381 24.8192C6.80314 21.605 2.9848 16.3971 4.37438 10.2587Z"
+                      stroke="#292D32"
+                      stroke-width="3"
+                    />
+                  </svg>
+                  {route.from}
+                </div>
+                <div className="blockObjectRoutePage">
+                  <div className="blockObjectRoutePageScroll">
+                    {route.data.map((place, index) => (
                       <div
+                        className="objectRoutePage"
                         key={index}
-                        className={
-                          selectedPlace === place
-                            ? "titlePlaceRoutePageActive"
-                            : "titlePlaceRoutePage"
-                        }
+                        onClick={() => setSelectedPlace(place)}
                       >
-                        • {place.address}
+                        <div
+                          key={index}
+                          className={
+                            selectedPlace === place
+                              ? "titlePlaceRoutePageActive"
+                              : "titlePlaceRoutePage"
+                          }
+                        >
+                          • {place.address}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>{" "}
-              </div>
-              <div className="fromToTextRoutePage">
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.5001 19.5854C20.013 19.5854 22.0501 17.5483 22.0501 15.0354C22.0501 12.5225 20.013 10.4854 17.5001 10.4854C14.9872 10.4854 12.9501 12.5225 12.9501 15.0354C12.9501 17.5483 14.9872 19.5854 17.5001 19.5854Z"
-                    stroke="#292D32"
-                    strokeWidth="3"
-                  />
-                  <path
-                    d="M5.27931 12.3812C8.15223 -0.247923 26.8626 -0.23334 29.721 12.3958C31.3981 19.8042 26.7897 26.075 22.7501 29.9542C19.8189 32.7833 15.1814 32.7833 12.2356 29.9542C8.21056 26.075 3.60223 19.7896 5.27931 12.3812Z"
-                    stroke="#292D32"
-                    strokeWidth="3"
-                  />
-                </svg>
-                {route.to}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="infoObjectContRoutePage">
-          <div className="infoObjectRoutePage">
-            {selectedPlace ? (
-              <>
-                <div className="imgObjectRouteContainer"></div>
-                <div className="titleInfoObjectRoutePage">
-                  {selectedPlace.address}
+                    ))}
+                  </div>{" "}
                 </div>
-                <div className="lineContInfoObjectRoutePage">
-                  <div className="lineInfoObjectRoutePage">
-                    <div className="textLeftInfoObjectRoutePage">Адрес</div>
-                    <div className="addressInfoObjectRoutePage">
-                      {selectedPlace.address}
-                    </div>
+                <div className="fromToTextRoutePage">
+                  <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.5002 16.2279C16.5823 16.2279 18.2702 14.54 18.2702 12.4579C18.2702 10.3758 16.5823 8.68791 14.5002 8.68791C12.4181 8.68791 10.7302 10.3758 10.7302 12.4579C10.7302 14.54 12.4181 16.2279 14.5002 16.2279Z"
+                      stroke="#292D32"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M4.37438 10.2587C6.7548 -0.205424 22.2577 -0.193341 24.6261 10.2708C26.0156 16.4092 22.1973 21.605 18.8502 24.8192C16.4215 27.1633 12.579 27.1633 10.1381 24.8192C6.80314 21.605 2.9848 16.3971 4.37438 10.2587Z"
+                      stroke="#292D32"
+                      stroke-width="3"
+                    />
+                  </svg>
+                  {route.to}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="infoObjectContRoutePage">
+            <div className="infoObjectRoutePage">
+              {selectedPlace ? (
+                <>
+                  <div className="imgObjectRouteContainer"></div>
+                  <div className="titleInfoObjectRoutePage">
+                    {selectedPlace.address}
                   </div>
-                  <div className="lineInfoObjectRoutePage">
-                    <div className="textLeftInfoObjectRoutePage">Описание</div>
-                    <div className="lineInfoObjectRoutePageScroll">
+                  <div className="lineContInfoObjectRoutePage">
+                    <div className="lineInfoObjectRoutePage">
+                      <div className="textLeftInfoObjectRoutePage">Адрес</div>
                       <div className="addressInfoObjectRoutePage">
-                        {selectedPlace.info}
+                        {selectedPlace.address}
+                      </div>
+                    </div>
+                    <div className="lineInfoObjectRoutePage">
+                      <div className="textLeftInfoObjectRoutePage">
+                        Описание
+                      </div>
+                      <div className="lineInfoObjectRoutePageScroll">
+                        <div className="addressInfoObjectRoutePage">
+                          {selectedPlace.info}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </>
-            ) : (
-              <div className="emptyObjectRoutePage">Выберите объект</div>
-            )}
+                </>
+              ) : (
+                <div className="emptyObjectRoutePage">Выберите объект</div>
+              )}
+            </div>
           </div>
         </div>
       </div>
