@@ -3,6 +3,7 @@ import Home from "./pages/home/home.jsx"
 import { RoutesPage } from "./pages/routesPage/routesPage.jsx"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { RoutePage } from "./pages/routePage/routePage.jsx"
+import { InfoPage } from "./pages/infoPage/infoPage.jsx"
 function App() {
   const [profileModal, setProfileModal] = useState(false)
   const [textProfileModalActive, setTextProfileModalActive] = useState(1)
@@ -42,6 +43,17 @@ function App() {
               textProfileModalActive={textProfileModalActive}
               setTextProfileModalActive={setTextProfileModalActive}
               routeUser={routeUser}
+            />
+          }
+        />
+        <Route
+          path="/info"
+          element={
+            <InfoPage
+              profileModal={profileModal}
+              setProfileModal={setProfileModal}
+              textProfileModalActive={textProfileModalActive}
+              setTextProfileModalActive={setTextProfileModalActive}
             />
           }
         />

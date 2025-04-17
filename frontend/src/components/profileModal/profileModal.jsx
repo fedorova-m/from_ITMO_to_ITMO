@@ -1,10 +1,14 @@
-import { useState } from "react"
 import "./profileModal.scss"
 import { Link } from "react-router-dom"
 export const ProfileModal = ({
   textProfileModalActive,
   setTextProfileModalActive,
+  setProfileModal,
 }) => {
+  const handleProfileModal = (p) => {
+    setProfileModal(false)
+    setTextProfileModalActive(p)
+  }
   return (
     <div className="profileModal">
       <Link
@@ -17,7 +21,7 @@ export const ProfileModal = ({
               ? "textProfileModalActive"
               : "textProfileModal"
           }
-          onClick={() => setTextProfileModalActive(1)}
+          onClick={() => handleProfileModal(1)}
         >
           Главная
         </div>
@@ -33,13 +37,13 @@ export const ProfileModal = ({
               ? "textProfileModalActive"
               : "textProfileModal"
           }
-          onClick={() => setTextProfileModalActive(2)}
+          onClick={() => handleProfileModal(2)}
         >
           Маршруты
         </div>
       </Link>
       <Link
-        to="/routes"
+        to="/info"
         style={{ textDecoration: "none", width: "calc(100% - 41px)" }}
       >
         {" "}
@@ -49,7 +53,7 @@ export const ProfileModal = ({
               ? "textProfileModalActive"
               : "textProfileModal"
           }
-          onClick={() => setTextProfileModalActive(3)}
+          onClick={() => handleProfileModal(3)}
         >
           О нас
         </div>
@@ -65,7 +69,7 @@ export const ProfileModal = ({
               : "textProfileModal"
           }
           style={{ borderBottom: "none" }}
-          onClick={() => setTextProfileModalActive(4)}
+          onClick={() => handleProfileModal(4)}
         >
           Отзывы
         </div>

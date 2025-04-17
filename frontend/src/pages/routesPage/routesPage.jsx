@@ -154,6 +154,7 @@ export const RoutesPage = ({
           <ProfileModal
             textProfileModalActive={textProfileModalActive}
             setTextProfileModalActive={setTextProfileModalActive}
+            setProfileModal={setProfileModal}
           />
         </div>
       )}

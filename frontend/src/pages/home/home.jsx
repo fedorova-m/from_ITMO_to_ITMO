@@ -130,6 +130,7 @@ const Home = ({
           <ProfileModal
             textProfileModalActive={textProfileModalActive}
             setTextProfileModalActive={setTextProfileModalActive}
+            setProfileModal={setProfileModal}
           />
         </div>
       )}

@@ -3,7 +3,6 @@ import "./routePage.scss"
 import { useEffect, useState } from "react"
 import { ProfileModal } from "../../components/profileModal/profileModal"
 import array from "../../array.js"
-import logo from "../../assets/img/logo.png"
 import { Link } from "react-router-dom"
 import images from "../../utils/importImage.js"
 export const RoutePage = ({
